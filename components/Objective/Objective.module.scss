@@ -1,0 +1,30 @@
+@import '../../styles/sizes';
+
+.objective {
+  cursor: help;
+  display: flex;
+  align-items: center;
+
+  svg {
+    fill: var(--blue-side-color);
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.value {
+  margin-right: $XXS;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+
+  .value {
+    margin-left: $XXS;
+    margin-right: 0;
+  }
+
+  svg {
+    fill: var(--red-side-color);
+  }
+}

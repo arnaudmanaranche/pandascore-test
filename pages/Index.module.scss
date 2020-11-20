@@ -1,0 +1,78 @@
+@import '../styles/sizes';
+
+$border-radius: 3px;
+
+.wrapper {
+  padding-top: $XXXL;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: $XS;
+}
+
+.other {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.kills {
+  background-color: var(--grey-dark-color);
+  border-radius: $border-radius;
+  padding: $S $M;
+  display: flex;
+  align-items: center;
+
+  span {
+    padding: $XS;
+  }
+
+  svg {
+    fill: #222335;
+  }
+}
+
+.blueSide,
+.redSide {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.objectives {
+  background-color: var(--grey-light-color);
+  display: flex;
+  border-radius: $border-radius 0 0 $border-radius;
+  padding: $M;
+  justify-content: space-around;
+}
+
+.neutralObjectives {
+  display: flex;
+  padding: 0 $M 0;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.block {
+  display: flex;
+
+  > :nth-child(2) {
+    margin-left: $XS;
+  }
+}
+
+.currentTime {
+  border-radius: $border-radius;
+  background-color: var(--green-light-color);
+  padding: $XS;
+}
