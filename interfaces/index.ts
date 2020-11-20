@@ -6,7 +6,7 @@ export interface LolFrame {
   game: {
     finished: boolean
     id: number
-    winner_id: id | null
+    winner_id: number | null
   }
   match: {
     id: number
