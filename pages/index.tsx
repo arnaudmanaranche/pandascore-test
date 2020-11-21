@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import Objective from '@components/Objective/Objective'
 import Teams from '@components/Teams/Teams'
-import GoldDifference from '@components/Chart/Chart'
+import GoldDifference from '@components/GoldDifference/GoldDifference'
 import Kill from '@static/svgs/kill.svg'
 import Inib from '@static/svgs/inib.svg'
 import Tower from '@static/svgs/tower.svg'
@@ -22,6 +22,7 @@ import {
   BLUE_TEAM,
   RED_TEAM,
 } from '@utils/constants'
+import webSocketConnection from '@utils/webSocket'
 
 import styles from './Index.module.scss'
 
@@ -33,9 +34,7 @@ export default function Home(): JSX.Element {
   const [checkGold, setCheckGold] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    ws.current = new WebSocket('ws://localhost:4000/')
-    ws.current.onopen = () => console.log('Game start...')
-    ws.current.onclose = () => console.log('Game finished. G2 won (as always)')
+    webSocketConnection(ws)
 
     return () => {
       ws.current.close()
@@ -45,7 +44,7 @@ export default function Home(): JSX.Element {
   React.useEffect(() => {
     if (!ws.current) return
 
-    const interval = setInterval(() => setCheckGold(true), 15000)
+    const interval = setInterval(() => setCheckGold(true), 30000)
 
     ws.current.onmessage = (e) => {
       const message = JSON.parse(e.data)

@@ -2,10 +2,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, run the Next.js app:
 
 ```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Then, run the WebSocket server:
+
+```bash
+yarn dev:events
+```
+
+Open [http://localhost:3000](http://localhost:3000)

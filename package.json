@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev:events": "json-websocket ./public/events.jsonl"
   },
   "dependencies": {
     "@svgr/webpack": "5.5.0",
     "chart.js": "2.9.4",
+    "json-websocket": "0.1.5",
     "next": "10.0.1",
     "react": "17.0.1",
     "react-chartjs-2": "2.11.1",
